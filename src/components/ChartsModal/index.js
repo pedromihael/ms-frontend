@@ -27,10 +27,6 @@ export const ChartsModal = ({ closeModal, displayedData }) => {
     return;
   }, []);
 
-  useEffect(() => {
-    console.log('displayedData', displayedData);
-  }, []);
-
   return (
     <Container>
       <ModalContainer>

@@ -51,12 +51,11 @@ function Projects() {
 
   const handleRegistration = useCallback(async () => {
     const payload = {
-      id: idRef.current.value,
       field: fieldRef.current.value,
       value: valueRef.current.value,
     };
 
-    const response = await apiConnection.put(`/projects`, payload);
+    const response = await apiConnection.put(`/projects/${idRef.current.value}`, payload);
 
     if (response.data.ok) {
       setRegisterSucess({ text: 'Editado com sucesso!', success: true });

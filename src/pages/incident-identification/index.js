@@ -44,7 +44,6 @@ function IncidentIdentification() {
       }
 
       const incidentsResponse = await apiConnection.get('/incidents');
-      console.log('incidentsResponse');
 
       if (incidentsResponse.data) {
         setIncidents(incidentsResponse.data);

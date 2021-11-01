@@ -46,12 +46,11 @@ function Reliabilities() {
 
   const handleRegistration = useCallback(async () => {
     const payload = {
-      id: idRef.current.value,
       field: fieldRef.current.value,
       value: valueRef.current.value,
     };
 
-    const response = await apiConnection.put(`/reliabilities`, payload);
+    const response = await apiConnection.put(`/reliabilities/${idRef.current.value}`, payload);
 
     if (response.data.ok) {
       setRegisterSucess({ text: 'Editado com sucesso!', success: true });

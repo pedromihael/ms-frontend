@@ -32,12 +32,11 @@ function Incidents() {
 
   const handleRegistration = useCallback(async () => {
     const payload = {
-      id: incidentIdRef.current.value,
       field: 'description',
       value: incidentDescRef.current.value,
     };
 
-    const response = await apiConnection.put(`/incidents`, payload);
+    const response = await apiConnection.put(`/incidents/${incidentIdRef.current.value}`, payload);
 
     if (response.data.ok) {
       setRegisterSucess({ text: 'Editado com sucesso!', success: true });

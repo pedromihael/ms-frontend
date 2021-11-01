@@ -17,10 +17,9 @@ function SeverityRegistration() {
     const payload = {
       field: 'weight',
       value: weightRef.current.value,
-      id: severityRef.current.value,
     };
 
-    const response = await apiConnection.put('/severities', payload);
+    const response = await apiConnection.put(`/severities/${severityRef.current.value}`, payload);
 
     if (response.data.ok) {
       setRegisterSucess({ text: 'Registrado com sucesso!', success: true });
